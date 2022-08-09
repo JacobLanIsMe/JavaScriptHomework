@@ -1,0 +1,54 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+}
+header .container{
+    height:100px;
+    background-color:black;
+    color:white;
+}
+header .container .title{
+    height:100px;
+    line-height:100px;
+    margin-left:20px;
+}
+table {
+    border: 3px solid #2894FF;
+    border-collapse: collapse;
+    background-color: lightblue;
+    margin:20px;
+}
+
+td {
+    border: 3px solid #2894FF;
+    padding: 5px;
+    color: red;
+}
+
+fieldset {
+    width: 400px;
+    border: 5px solid red;
+    border-radius: 20px;
+    box-shadow: 5px 5px 15px gray;
+    padding: 0 20px;
+    margin: 20px;
+}
+
+legend {
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 20px;
+    padding: 0 20px;
+}
+
+.formdiv {
+    border-bottom: 2px dashed #BEBEBE;
+    margin: 10px;
+    padding-bottom: 10px;
+}
+
+p {
+    font-size: 12px;
+    color: #BEBEBE;
+}
+

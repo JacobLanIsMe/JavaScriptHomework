@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JavaScript Homeworks</title>
+    <link href="css/Homework.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="title">
+                JavaScript Homework
+            </div>
+        </div>
+    </header>
+    <script>
+        let c, d;
+        c = "<table><tr>";
+        for (let i = 2; i < 10; i++) {
+            d = "<td>";
+            for (let j = 1; j < 10; j++) {
+                d += `${i}*${j}=${i * j}<br>`;
+            }
+            d += "</td>";
+            c += d;
+        }
+        c += "</tr></table>";
+        document.write(c);
+    </script>
+    <hr />
+    <form action="/" method="post">
+        <fieldset>
+            <legend>Form Check</legend>
+            <div class="formdiv">
+                <label for="name">姓名:</label>
+                <input type="text" name="name" value="" id="name" required onblur="checkName()" />
+                <span id="spanName"></span>
+                <p>(1.不可空白 2.至少兩個字以上 3.必須全部為中文字)</p>
+            </div>
+            <div class="formdiv">
+                <label for="pwd">密碼:</label>
+                <input type="password" name="pwd" value="" id="pwd" required onblur="checkPwd()" />
+                <span id="spanPwd"></span>
+                <p>(1.不可空白 2.至少6個字必須包含英數字、特殊字元[!@#$%^&*])</p>
+            </div>
+            <div class="formdiv">
+                <label for="date">日期:</label>
+                <input type="text" name="date" value="" id="date" required onblur="checkDate()" />
+                <span id="spanDate"></span>
+                <p>格式:西元年/月/日(yyyy/mm/dd)</p>
+            </div>
+        </fieldset>
+        <!--<input type="submit" name="submit" value="送出" onclick="Submit()"/>-->
+    </form>
+    <script src="js/Homework.js"></script>
+</body>
+</html>
