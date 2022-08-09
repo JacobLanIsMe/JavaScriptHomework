@@ -6,29 +6,33 @@
     <link href="css/Homework.css" rel="stylesheet" />
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="title">
-                JavaScript Homework
-            </div>
+    <header id="header">
+        <div class="title">
+            <p>JavaScript Homework</p>
         </div>
+        <nav>
+            <a href="#tb1">九九乘法表</a>
+            <a href="#form1">表單</a>
+        </nav>
     </header>
+    <table id="tb1">
+        <tr id="tr1">
+        </tr>
+    </table>
     <script>
-        let c, d;
-        c = "<table><tr>";
+        let tr = document.getElementById("tr1");
         for (let i = 2; i < 10; i++) {
-            d = "<td>";
+            let str = "<td>";
             for (let j = 1; j < 10; j++) {
-                d += `${i}*${j}=${i * j}<br>`;
+                str += `${i}*${j}=${i * j}<br>`;
             }
-            d += "</td>";
-            c += d;
+            str += "</td>";
+            tr.innerHTML += str;
         }
-        c += "</tr></table>";
-        document.write(c);
+        
     </script>
     <hr />
-    <form action="/" method="post">
+    <form action="/" method="post" id="form1">
         <fieldset>
             <legend>Form Check</legend>
             <div class="formdiv">
@@ -52,6 +56,13 @@
         </fieldset>
         <!--<input type="submit" name="submit" value="送出" onclick="Submit()"/>-->
     </form>
+    <hr />
+
+
+
+    <div class="goTop">
+        <a href="#header"><img src="img/top.png" alt="Alternate Text" /></a>
+    </div>
     <script src="js/Homework.js"></script>
 </body>
 </html>
