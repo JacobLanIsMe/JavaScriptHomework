@@ -1,41 +1,58 @@
 ﻿function checkName() {
     let name = document.getElementById("name").value;
     let spanName = document.getElementById("spanName");
-    let re = /[\u4e00-\u9fa5]{2,}/;
-    if (re.test(name)) {
-        spanName.innerHTML = "⭕Correct";
+    let isChi = true;
+    if (name == "") {
+        spanName.innerHTML = "❌姓名不能是空白";
+    } else if (name.length < 2) {
+        spanName.innerHTML = "❌至少要兩個中文字";
     } else {
-        spanName.innerHTML = "❌Incorrect";
+        for (let i = 0; i < name.length; i++) {
+            if (name.charCodeAt(i) < 0x4E00 || name.charCodeAt(i) > 0x9FA5) {
+                spanName.innerHTML = "❌必須全部為中文字";
+                isChi = false;
+                break;
+            }
+        }
+        if (isChi) spanName.innerHTML = "⭕Correct";
     }
+    
+    //let re = /[\u4e00-\u9fa5]{2,}/;
+    //if (re.test(name)) 
+    //    spanName.innerHTML = "⭕Correct";
+    //} else {
+    //    spanName.innerHTML = "❌Incorrect";
+    //}
 }
 function checkPwd() {
-    let pwd = document.getElementById("pwd").value;
+    let pwd = document.getElementById("pwd").value.toUpperCase();
     let spanPwd = document.getElementById("spanPwd");
-    let re = /[A-Za-z0-9!@#$%^&*]{6,}/;
-    if (re.test(pwd)) {
-        spanPwd.innerHTML = "⭕Correct";
-    } else {
-        spanPwd.innerHTML = "❌Incorrect";
-    }
-    //let flag1 = false, flag2 = false, falg3 = false;
-    //if (pwd == "") {
-    //    spanPwd.innerHTML = "❌密碼不能空白";
-    //} else if (pwd.length < 6) {
-    //    spanPwd.innerHTML = "❌密碼需要大於6個字元";
+    //let re = /[A-Za-z0-9!@#$%^&*]{6,}/;
+    //if (re.test(pwd)) {
+    //    spanPwd.innerHTML = "⭕Correct";
     //} else {
-    //    for (let i = 0; i < pwd.length; i++) {
-    //        if (pwd.charAt(i) >= "A" && pwd.charAt(i) <= "Z") {
-    //            flag1 = true;
-    //        } else if (pwd.charAt(i) >= "0" && pwd.charAt(i) <= "9") {
-    //            flag2 = true;
-    //        } else if (re.test(pwd.charAt(i))) {
-    //            flag3 = true;
-    //        }
-    //        if (flag1 && flag2 && flag3) break;
-    //    }
-    //    if (flag1 && flag2 && flag3) spanPwd.innerHTML = "⭕Correct";
-    //    else spanPwd.innerHTML = "❌Incorrect";
+    //    spanPwd.innerHTML = "❌Incorrect";
     //}
+    let re = /[!@#$%^&*]{1,}/;
+    let flag1 = false, flag2 = false, flag3 = false;
+    if (pwd == "") {
+        spanPwd.innerHTML = "❌密碼不能空白";
+    } else if (pwd.length < 6) {
+        spanPwd.innerHTML = "❌密碼需要大於6個字元";
+    } else {
+        for (let i = 0; i < pwd.length; i++) {
+            if (pwd.charAt(i) >= "A" && pwd.charAt(i) <= "Z") {
+                flag1 = true;
+            } else if (pwd.charAt(i) >= "0" && pwd.charAt(i) <= "9") {
+                flag2 = true;
+            } else if (re.test(pwd.charAt(i))) {
+                flag3 = true;
+            }
+            if (flag1 && flag2 && flag3) break;
+        }
+        if (flag1 && flag2 && flag3) spanPwd.innerHTML = "⭕Correct";
+        else spanPwd.innerHTML = "❌密碼格式錯誤";
+    }
 }
 function checkDate() {
     let myDate = document.getElementById("date").value;
