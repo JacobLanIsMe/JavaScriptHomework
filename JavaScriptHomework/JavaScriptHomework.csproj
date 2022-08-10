@@ -69,7 +69,8 @@
   <ItemGroup>
     <Content Include="css\Homework.css" />
     <Content Include="Homework.html" />
-    <Content Include="js\Homework.js" />
+    <Content Include="js\Homework1and2.js" />
+    <Content Include="js\Homework3.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

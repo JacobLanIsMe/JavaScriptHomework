@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <title>JavaScript Homeworks</title>
     <link href="css/Homework.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header id="header">
@@ -11,14 +12,17 @@
             <p>JavaScript Homework</p>
         </div>
         <nav>
-            <a href="#tb1">九九乘法表</a>
-            <a href="#form1">表單</a>
+            <a href="#article1">九九乘法表</a>
+            <a href="#article2">表單</a>
+            <a href="#article3">評點製作</a>
         </nav>
     </header>
-    <table id="tb1">
-        <tr id="tr1">
-        </tr>
-    </table>
+    <article class="article1" id="article1">
+        <table id="tb1">
+            <tr id="tr1">
+            </tr>
+        </table>
+    </article>
     <script>
         let tr = document.getElementById("tr1");
         for (let i = 2; i < 10; i++) {
@@ -29,40 +33,51 @@
             str += "</td>";
             tr.innerHTML += str;
         }
-        
     </script>
     <hr />
-    <form action="/" method="post" id="form1">
-        <fieldset>
-            <legend>Form Check</legend>
-            <div class="formdiv">
-                <label for="name">姓名:</label>
-                <input type="text" name="name" value="" id="name" required onblur="checkName()" />
-                <span id="spanName"></span>
-                <p>(1.不可空白 2.至少兩個字以上 3.必須全部為中文字)</p>
-            </div>
-            <div class="formdiv">
-                <label for="pwd">密碼:</label>
-                <input type="password" name="pwd" value="" id="pwd" required onblur="checkPwd()" />
-                <span id="spanPwd"></span>
-                <p>(1.不可空白 2.至少6個字必須包含英數字、特殊字元[!@#$%^&*])</p>
-            </div>
-            <div class="formdiv">
-                <label for="date">日期:</label>
-                <input type="text" name="date" value="" id="date" required onblur="checkDate()" />
-                <span id="spanDate"></span>
-                <p>格式:西元年/月/日(yyyy/mm/dd)</p>
-            </div>
-        </fieldset>
-        <!--<input type="submit" name="submit" value="送出" onclick="Submit()"/>-->
-    </form>
+    <article class="article2" id="article2">
+        <form action="/" method="post" id="form1" class="form1">
+            <fieldset>
+                <legend>Form Check</legend>
+                <div class="formdiv">
+                    <label for="name">姓名:</label>
+                    <input type="text" name="name" value="" id="name" required />
+                    <span id="spanName"></span>
+                    <p>(1.不可空白 2.至少兩個字以上 3.必須全部為中文字)</p>
+                </div>
+                <div class="formdiv">
+                    <label for="pwd">密碼:</label>
+                    <input type="password" name="pwd" value="" id="pwd" required />
+                    <span id="spanPwd"></span>
+                    <p>(1.不可空白 2.至少6個字必須包含英數字、特殊字元[!@#$%^&*])</p>
+                </div>
+                <div class="formdiv">
+                    <label for="date">日期:</label>
+                    <input type="text" name="date" value="" id="date" required />
+                    <span id="spanDate"></span>
+                    <p>格式:西元年/月/日(yyyy/mm/dd)</p>
+                </div>
+            </fieldset>
+        </form>
+    </article>
     <hr />
-
-
+    <article class="article3" id="article3">
+        <div class="container1">
+            <div class="stardiv"><img src="img/star.png" alt="Alternate Text" id="img1" /></div>
+            <div class="stardiv"><img src="img/star.png" alt="Alternate Text" id="img2" /></div>
+            <div class="stardiv"><img src="img/star.png" alt="Alternate Text" id="img3" /></div>
+            <div class="stardiv"><img src="img/star.png" alt="Alternate Text" id="img4" /></div>
+            <div class="stardiv"><img src="img/star.png" alt="Alternate Text" id="img5" /></div>
+        </div>
+        <div class="clickmethod">單擊星星可評分，雙擊星星重置</div>
+        <div id="scorediv"></div>
+    </article>
+    <hr />
 
     <div class="goTop">
         <a href="#header"><img src="img/top.png" alt="Alternate Text" /></a>
     </div>
-    <script src="js/Homework.js"></script>
+    <script src="js/Homework1and2.js"></script>
+    <script src="js/Homework3.js"></script>
 </body>
 </html>
