@@ -179,6 +179,14 @@ article {
 .article4 .itemsdiv .updowndiv img:hover {
     cursor: pointer;
 }
+.article5{
+    background-color:lightslategray;
+}
+
+.article5 .box1{
+    width:59%;
+}
+
 hr{
     margin:100px 0;
 }
