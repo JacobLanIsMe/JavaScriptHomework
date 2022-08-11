@@ -61,7 +61,7 @@ article {
     font-size:2em;
 }
  
-fieldset {
+.article2 fieldset {
     width: 100%;
     height: 400px;
     border: 5px solid red;
@@ -70,32 +70,32 @@ fieldset {
     padding: 0 20px;
 }
 
-legend {
+.article2 legend {
     font-size: 2em;
     font-family:Arial;
     font-weight:900;
     margin-left: 20px;
     padding: 0 20px;
 }
-fieldset .formdiv label, fieldset .formdiv input{
+.article2 fieldset .formdiv label, fieldset .formdiv input{
     font-size:30px;
     font-family:DFKai-SB;
 }
-.formdiv {
+.article2 .formdiv {
     border-bottom: 2px dashed #BEBEBE;
     margin: 20px 20px;
     padding-bottom: 20px;
 }
-.formdiv span img{
+.article2 .formdiv span img{
     width:30px;
 }
-.form1 p {
+.article2 .form1 p {
     font-size: 16px;
     font-family:DFKai-SB;
     margin:5px;
     color: #BEBEBE;
 }
-.form1 span{
+.article2 .form1 span{
     font-size:30px;
     font-family:DFKai-SB;
 }
