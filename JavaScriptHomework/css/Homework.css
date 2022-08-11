@@ -127,6 +127,26 @@ article {
 .article3 .clickmethod{
     font-style:italic;
 }
+
+.article4 .imgdiv{
+    width:80%;
+    margin:0 auto;
+}
+.article4 .imgdiv img{
+    width:100%;
+}
+.article4 .itemsdiv{
+    width:60%;
+    margin:0 auto;
+}
+
+.article4 .itemsdiv .updowndiv{
+    display:flex;
+    justify-content:space-between;
+}
+.article4 .itemsdiv .updowndiv img{
+    width:50px;
+}
 hr{
     margin:100px 0;
 }

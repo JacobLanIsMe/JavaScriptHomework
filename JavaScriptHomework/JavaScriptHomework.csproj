@@ -69,8 +69,28 @@
   <ItemGroup>
     <Content Include="css\Homework.css" />
     <Content Include="Homework.html" />
+    <Content Include="img\correct.png" />
+    <Content Include="img\headerback.jpg" />
+    <Content Include="img\homework4\1.jpg" />
+    <Content Include="img\homework4\2.jpg" />
+    <Content Include="img\homework4\3.jpg" />
+    <Content Include="img\homework4\4.jpg" />
+    <Content Include="img\homework4\5.jpg" />
+    <Content Include="img\homework4\6.jpg" />
+    <Content Include="img\homework4\7.jpg" />
+    <Content Include="img\homework4\8.jpg" />
+    <Content Include="img\homework4\9.jpg" />
+    <Content Include="img\homework4\10.jpg" />
+    <Content Include="img\incorrect.png" />
+    <Content Include="img\next.png" />
+    <Content Include="img\pause.png" />
+    <Content Include="img\play.png" />
+    <Content Include="img\previous.png" />
+    <Content Include="img\star.png" />
+    <Content Include="img\top.png" />
     <Content Include="js\Homework1and2.js" />
     <Content Include="js\Homework3.js" />
+    <Content Include="js\Homework4.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
