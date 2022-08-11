@@ -2,8 +2,19 @@
 document.getElementById("play").addEventListener("click", PlayOrPause);
 document.getElementById("article4img").addEventListener("mouseover", article4MouseOver);
 document.getElementById("article4img").addEventListener("mouseout", article4MouseOut);
+document.getElementById("article4img").addEventListener("click", LinkTo);
 document.getElementById("previous").addEventListener("click", PreviousClick);
 document.getElementById("next").addEventListener("click", NextClick);
+let imageInfo = ["https://www.taiwanbear.org.tw/bear/bear/55",
+    "https://zh.wikipedia.org/zh-tw/%E6%B2%99%E6%BC%A0",
+    "https://sports.ettoday.net/news/2311871",
+    "https://tour.taitung.gov.tw/zh-tw/attraction/details/429",
+    "https://zh.wikipedia.org/wiki/%E5%8C%97%E6%A5%B5%E7%8B%BC",
+    "https://zh.wikipedia.org/zh-tw/%E9%BB%83%E7%9F%B3%E5%9C%8B%E5%AE%B6%E5%85%AC%E5%9C%92",
+    "https://tw.news.yahoo.com/%E5%8C%97%E5%B8%82%E5%BF%A0%E5%AD%9D%E8%A5%BF%E8%B7%AF%E5%A4%95%E9%99%BD%E6%87%B8%E6%97%A5%E7%BE%8E%E6%99%AF%E5%90%B8%E7%9D%9B-2-%E5%9C%96-104957463.html",
+    "https://www.natgeomedia.com/science/article/content-15366.html",
+    "https://zh.wikipedia.org/zh-tw/%E5%A4%A9%E4%BA%95",
+    "https://dl.lib.ntu.edu.tw/s/photo/page/Home"];
 let str = "";
 for (let i = 1; i <= 10; i++) {
     str += `<img src="img/circle.png" class="circleimg" id="circleimg${i}">`;
@@ -70,6 +81,9 @@ function CircleMouseOut() {
     document.getElementById(this.id).src = "img/circle.png";
 }
 
+function LinkTo() {
+    window.open(imageInfo[imageNum-1], "_blank");
+}
 
 
 function ImageSelect() {

@@ -94,6 +94,7 @@
     <Content Include="js\Homework1and2.js" />
     <Content Include="js\Homework3.js" />
     <Content Include="js\Homework4.js" />
+    <Content Include="js\Homework5.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
