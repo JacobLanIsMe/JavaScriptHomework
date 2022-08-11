@@ -69,7 +69,10 @@
   <ItemGroup>
     <Content Include="css\Homework.css" />
     <Content Include="Homework.html" />
+    <Content Include="img\circle.png" />
     <Content Include="img\correct.png" />
+    <Content Include="img\dash.png" />
+    <Content Include="img\dot.png" />
     <Content Include="img\headerback.jpg" />
     <Content Include="img\homework4\1.jpg" />
     <Content Include="img\homework4\2.jpg" />
