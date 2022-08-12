@@ -31,15 +31,18 @@ function checkName() {
     }
 }
 function checkPwd() {
-    let pwd = document.getElementById("pwd").value.toUpperCase();
+    let pwd = document.getElementById("pwd").value;
     let spanPwd = document.getElementById("spanPwd");
-    let re1 = /[A-Z]+/;
+    let re1 = /[A-Za-z]+/;
     let re2 = /[0-9]+/;
     let re3 = /[!@#$%^&*]/;
+    let re4 = /[\s]+/;
     if (pwd == "") {
         spanPwd.innerHTML = `${incorrectIcon}密碼不能空白`;
     } else if (pwd.length < 6) {
         spanPwd.innerHTML = `${incorrectIcon}密碼需要大於6個字`;
+    } else if (re4.test(pwd)) {
+        spanPwd.innerHTML = `${incorrectIcon}密碼不能有空格`;
     } else {
         if (re1.test(pwd) && re2.test(pwd) && re3.test(pwd)) {
             spanPwd.innerHTML = `${correctIcon}Correct`;

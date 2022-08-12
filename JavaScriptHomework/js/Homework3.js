@@ -16,7 +16,7 @@ function MouseOver() {
     for (let i = starId; i <= 4; i++) {
         document.getElementById(`img${i+1}`).style.filter = "grayscale(1)";
     }
-    document.getElementById("scorediv").innerHTML = `${starId}顆星`;
+    document.getElementById("scorediv").innerHTML = `評分為...${starId}`;
 }
 function MouseOut() {
     if (isClick) return;
@@ -24,7 +24,7 @@ function MouseOut() {
         document.getElementById(`img${i}`).style.filter = "grayscale(1)";
     }
     oldStarId = 0;
-    document.getElementById("scorediv").innerHTML = `${oldStarId}顆星`;
+    document.getElementById("scorediv").innerHTML = `評分為...${oldStarId}`;
 }
 
 function StarClicked() {
@@ -46,7 +46,7 @@ function StarDoubleClicked() {
                document.getElementById(`img${i}`).style.filter = "grayscale(1)";
     }
     oldStarId = 0;
-    document.getElementById("scorediv").innerHTML = `${oldStarId}顆星`;
+    document.getElementById("scorediv").innerHTML = `評分為...${oldStarId}`;
     isClick = false;
     //if (oldStarId > 1) {
     //    if (starId <= oldStarId) {
