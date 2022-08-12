@@ -27,8 +27,8 @@ for (let i of document.getElementsByClassName("circleimg")) {
 }
 let imageNum = 1;
 document.getElementById("article4img").src = `img/homework4/${imageNum}.jpg`;
+
 function PlayImage() {
-    //clearTimeout(startPlay);
     imageNum += 1;
     let oldImageNum = imageNum - 1;
     if (imageNum > 10) {
@@ -37,14 +37,16 @@ function PlayImage() {
     document.getElementById("imgdiv").innerHTML = `<img src="img/homework4/${oldImageNum}.jpg" id="article4img${oldImageNum}" /><img src="img/homework4/${imageNum}.jpg" id="article4img${imageNum}" />`;
     document.getElementById(`article4img${oldImageNum}`).style.right = "0";
     document.getElementById(`article4img${imageNum}`).style.right = "-100%";
+    let oldImageObj = document.getElementById(`article4img${oldImageNum}`);
+    let imageObj = document.getElementById(`article4img${imageNum}`);
     let shiftDistance = 1;
     let slide = setInterval(function () {
         if (shiftDistance > 100) {
             clearInterval(slide);
             return;
         }
-        document.getElementById(`article4img${oldImageNum}`).style.right = `${shiftDistance}%`;
-        document.getElementById(`article4img${imageNum}`).style.right = `${shiftDistance - 100}%`;
+        oldImageObj.style.right = `${shiftDistance}%`;
+        imageObj.style.right = `${shiftDistance - 100}%`;
         shiftDistance += 1;
     }, 8);
     for (let i = 1; i <= 10; i++) {
@@ -56,11 +58,6 @@ function PlayImage() {
             document.getElementById(`circleimg${i}`).style.width = "10px";
         }
     }
-    //let aa = new Date().getTime();
-    //while (new Date().getTime() - aa == 3000) {
-    //startPlay = window.setTimeout(PlayImage, 5000);
-        
-    
 }
 
 let IsPlay = true;
