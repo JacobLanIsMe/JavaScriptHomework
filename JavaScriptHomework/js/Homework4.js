@@ -1,7 +1,7 @@
 ﻿let startPlay = window.setInterval(PlayImage, 5000);
 document.getElementById("play").addEventListener("click", PlayOrPause);
-document.getElementById("article4img").addEventListener("mouseover", article4MouseOver);
-document.getElementById("article4img").addEventListener("mouseout", article4MouseOut);
+document.getElementById("imgdiv").addEventListener("mouseover", article4MouseOver);
+document.getElementById("imgdiv").addEventListener("mouseout", article4MouseOut);
 document.getElementById("article4img").addEventListener("click", LinkTo);
 document.getElementById("previous").addEventListener("click", PreviousClick);
 document.getElementById("next").addEventListener("click", NextClick);
@@ -26,15 +26,58 @@ for (let i of document.getElementsByClassName("circleimg")) {
     document.getElementById(i.id).addEventListener("mouseout", CircleMouseOut);
 }
 let imageNum = 1;
-ImageSelect();
+document.getElementById("article4img").src = `img/homework4/${imageNum}.jpg`;
 function PlayImage() {
+    //clearTimeout(startPlay);
     imageNum += 1;
+    let oldImageNum = imageNum - 1;
     if (imageNum > 10) {
         imageNum = 1;
     }
-    ImageSelect();
+    document.getElementById("imgdiv").innerHTML = `<img src="img/homework4/${oldImageNum}.jpg" id="article4img${oldImageNum}" /><img src="img/homework4/${imageNum}.jpg" id="article4img${imageNum}" />`;
+    document.getElementById(`article4img${oldImageNum}`).style.right = "0";
+    document.getElementById(`article4img${imageNum}`).style.right = "-100%";
+    let shiftDistance = 1;
+    let slide = setInterval(function () {
+        if (shiftDistance > 100) {
+            clearInterval(slide);
+            return;
+        }
+        document.getElementById(`article4img${oldImageNum}`).style.right = `${shiftDistance}%`;
+        document.getElementById(`article4img${imageNum}`).style.right = `${shiftDistance - 100}%`;
+        shiftDistance += 1;
+    }, 8);
+    for (let i = 1; i <= 10; i++) {
+        if (i == imageNum) {
+            document.getElementById(`circleimg${imageNum}`).src = "img/dash.png";
+            document.getElementById(`circleimg${imageNum}`).style.width = "30px";
+        } else {
+            document.getElementById(`circleimg${i}`).src = "img/circle.png";
+            document.getElementById(`circleimg${i}`).style.width = "10px";
+        }
+    }
+    //let aa = new Date().getTime();
+    //while (new Date().getTime() - aa == 3000) {
+    //startPlay = window.setTimeout(PlayImage, 5000);
+        
+    
 }
+
 let IsPlay = true;
+
+function ImageSelect() {
+    document.getElementById("article4img").src = `img/homework4/${imageNum}.jpg`;
+    for (let i = 1; i <= 10; i++) {
+        if (i == imageNum) {
+            document.getElementById(`circleimg${imageNum}`).src = "img/dash.png";
+            document.getElementById(`circleimg${imageNum}`).style.width = "30px";
+        } else {
+            document.getElementById(`circleimg${i}`).src = "img/circle.png";
+            document.getElementById(`circleimg${i}`).style.width = "10px";
+        }
+    }
+}
+
 
 function PlayOrPause() {
     IsPlay = !IsPlay;
@@ -61,11 +104,7 @@ function PreviousClick() {
     ImageSelect();
 }
 function NextClick(){
-    imageNum += 1;
-    if (imageNum > 10) {
-        imageNum = 1;
-    }
-    ImageSelect();
+    PlayImage();
 }
 
 function CircleClick(){
@@ -86,15 +125,4 @@ function LinkTo() {
 }
 
 
-function ImageSelect() {
-    document.getElementById("article4img").src = `img/homework4/${imageNum}.jpg`;
-    for (let i = 1; i <= 10; i++) {
-        if (i == imageNum) {
-            document.getElementById(`circleimg${imageNum}`).src = "img/dash.png";
-            document.getElementById(`circleimg${imageNum}`).style.width = "30px";
-        } else {
-            document.getElementById(`circleimg${i}`).src = "img/circle.png";
-            document.getElementById(`circleimg${i}`).style.width = "10px";
-        }
-    }
-}
+

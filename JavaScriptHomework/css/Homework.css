@@ -148,10 +148,16 @@ article {
 
 .article4 .imgdiv{
     width:90%;
+    height:525px;
+    overflow:hidden;
     margin:0 auto;
+    position:relative;
 }
 .article4 .imgdiv img{
-    width:100%;
+    width:720px;
+    height:525px;
+    position:absolute;
+    right:0;
 }
 .article4 .imgdiv img:hover {
     cursor:pointer;
