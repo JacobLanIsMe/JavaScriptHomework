@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\Homework.css" />
+    <Content Include="css\rwd.css" />
     <Content Include="Homework.html" />
     <Content Include="img\circle.png" />
     <Content Include="img\correct.png" />
@@ -90,6 +91,7 @@
     <Content Include="img\play.png" />
     <Content Include="img\previous.png" />
     <Content Include="img\skydiveM2.png" />
+    <Content Include="img\skydiveM3.png" />
     <Content Include="img\star.png" />
     <Content Include="img\top.png" />
     <Content Include="js\Homework1and2.js" />
