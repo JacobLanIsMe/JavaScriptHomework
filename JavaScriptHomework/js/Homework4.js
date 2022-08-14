@@ -104,11 +104,13 @@ function PreviousClick() {
         shiftDistance += 0.5;
     }, 8);
     direction();
+    if (!IsPlay) return;
     startPlay = window.setInterval(PlayImage, 5000);
 }
 function NextClick() {
     clearInterval(startPlay);
     PlayImage();
+    if (!IsPlay) return;
     startPlay = window.setInterval(PlayImage, 5000);
 }
 
@@ -116,6 +118,8 @@ function CircleClick() {
     clearInterval(startPlay);
     imageNum = Number(this.id.substr(9));
     document.getElementById("imgdiv").innerHTML = `<img src="img/homework4/${imageNum}.jpg" id="article4img${imageNum}" />`;
+    direction()
+    if (!IsPlay) return;
     startPlay = window.setInterval(PlayImage, 5000);
 }
 function CircleMouseOver() {
