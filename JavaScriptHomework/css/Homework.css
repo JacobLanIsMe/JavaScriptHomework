@@ -35,13 +35,15 @@ header a {
     height: 50px;
     line-height: 50px;
     text-decoration: none;
-    font-size: 2em;
+    font-size: 1.7em;
     font-family: DFKai-SB;
     text-align: center;
     color: #5B5B00;
+    transition:font-size 1s;
 }
 header a:hover {
     color: #424200;
+    font-size:2em;
     text-decoration-line: underline;
 }
 
@@ -302,10 +304,11 @@ article {
     color: #8C8C00;
     font-family: 'Dancing Script', cursive;
     margin: 50px 20px 0 0;
+    transition:font-size 1s;
 }
 
 .footer .aboutme a:hover {
-    transform:scale(2);
+    font-size:2em;
     color: #424200;
 }
 
@@ -325,16 +328,4 @@ hr {
     right:0;
     bottom:30%;
 }
-@media screen and (max-width:768) {
-    header .title p {
-        font-size: 0.2em;
-    }
 
-    article {
-        width: 90%;
-    }
-
-    .goTop {
-        opacity: 0.5;
-    }
-}
