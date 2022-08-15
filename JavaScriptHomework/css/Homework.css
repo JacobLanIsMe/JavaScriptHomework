@@ -39,12 +39,12 @@ header a {
     font-family: DFKai-SB;
     text-align: center;
     color: #5B5B00;
-    transition:font-size 1s;
+    transition:transform 1s, text-shadow 1s;
 }
 header a:hover {
     color: #424200;
-    font-size:2em;
-    text-decoration-line: underline;
+    transform:translate(-5px, -5px);
+    text-shadow:5px 5px 5px gray;
 }
 
 article {
@@ -89,11 +89,31 @@ article {
 .article2 fieldset .formdiv label, fieldset .formdiv input{
     font-size:30px;
     font-family:DFKai-SB;
+    
 }
 .article2 .formdiv {
     border-bottom: 2px dashed #BEBEBE;
     margin: 20px 20px;
     padding-bottom: 20px;
+    position:relative;
+    
+}
+
+.article2 input:focus ~ .floatspan,
+.article2 input:not(:focus):valid ~ .floatspan {
+    font-size: 1em;
+    background-color: white;
+    top:-13px;
+    padding:0 10px;
+}
+
+.article2 .formdiv .floatspan{
+    position:absolute;
+    left:90px;
+    font-size:30px;
+    color:#9D9D9D;
+    pointer-events:none;
+    transition:0.4s linear;
 }
 .article2 .formdiv span img{
     width:30px;
@@ -297,13 +317,17 @@ article {
     font-family: 'Dancing Script', cursive;
 }
 
+.footer .aboutme .link{
+    display:flex;
+    justify-content:flex-start;
+}
 
 .footer .aboutme a {
     text-decoration: none;
     font-size: 1.4em;
     color: #8C8C00;
     font-family: 'Dancing Script', cursive;
-    margin: 50px 20px 0 0;
+    margin: 0 20px 0 0;
     transition:font-size 1s;
 }
 
@@ -323,6 +347,7 @@ article {
 hr {
     margin: 130px auto 150px;
 }
+
 .goTop{
     position:fixed;
     right:0;
