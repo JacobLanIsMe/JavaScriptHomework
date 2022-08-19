@@ -1,4 +1,4 @@
-﻿let startPlay = window.setInterval(PlayImage, 8000);
+﻿let startPlay = window.setInterval(PlayImage, 3000);
 document.getElementById("play").addEventListener("click", PlayOrPause);
 document.getElementById("imgdiv").addEventListener("mouseover", article4MouseOver);
 document.getElementById("imgdiv").addEventListener("mouseout", article4MouseOut);
@@ -45,7 +45,7 @@ function PlayImage() {
         oldImageObj.style.right = `${shiftDistance}%`;
         imageObj.style.right = `${shiftDistance - 100}%`;
         shiftDistance += 0.5;
-    }, 8);
+    }, 4);
     direction();
 }
 
@@ -71,7 +71,7 @@ function PlayOrPause() {
     IsPlay = !IsPlay;
     if (IsPlay) {
         document.getElementById("play").src = "img/pause.png";
-        startPlay = window.setInterval(PlayImage, 5000);
+        startPlay = window.setInterval(PlayImage, 3000);
     } else {
         document.getElementById("play").src = "img/play.png";
         clearInterval(startPlay);
@@ -82,7 +82,7 @@ function article4MouseOver() {
 }
 function article4MouseOut() {
     if (!IsPlay) return;
-    startPlay = window.setInterval(PlayImage, 5000);
+    startPlay = window.setInterval(PlayImage, 3000);
 }
 function PreviousClick() {
     clearInterval(startPlay);
@@ -102,16 +102,16 @@ function PreviousClick() {
         oldImageObj.style.left = `${shiftDistance}%`;
         imageObj.style.left = `${shiftDistance - 100}%`;
         shiftDistance += 0.5;
-    }, 8);
+    }, 4);
     direction();
     if (!IsPlay) return;
-    startPlay = window.setInterval(PlayImage, 5000);
+    startPlay = window.setInterval(PlayImage, 3000);
 }
 function NextClick() {
     clearInterval(startPlay);
     PlayImage();
     if (!IsPlay) return;
-    startPlay = window.setInterval(PlayImage, 5000);
+    startPlay = window.setInterval(PlayImage, 3000);
 }
 
 function CircleClick() {
@@ -120,7 +120,7 @@ function CircleClick() {
     document.getElementById("imgdiv").innerHTML = `<img src="img/homework4/${imageNum}.jpg" id="article4img${imageNum}" />`;
     direction()
     if (!IsPlay) return;
-    startPlay = window.setInterval(PlayImage, 5000);
+    startPlay = window.setInterval(PlayImage, 3000);
 }
 function CircleMouseOver() {
     if (Number(this.id.substr(9)) == imageNum) return;
