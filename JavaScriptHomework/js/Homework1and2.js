@@ -69,3 +69,10 @@ function checkDate() {
         spanDate.innerHTML = `${incorrectIcon}Incorrect`;
     }
 }
+
+$(".hamburgerdiv img").click(function () {
+    $(".hamburgerli").toggle(500);
+});
+$(".hamburgerli li").click(function () {
+    $(".hamburgerli").slideUp(500);
+});
